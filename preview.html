@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Authentication UI Preview</title>
+    <!-- Use Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Animated background shapes -->
+    <ul class="circles">
+        <li></li><li></li><li></li><li></li><li></li>
+    </ul>
+
+    <!-- Main Auth Container -->
+    <div class="auth-container" id="auth-container">
+        
+        <!-- Login Form -->
+        <div class="form-box login">
+            <h2>Welcome Back</h2>
+            <form onsubmit="event.preventDefault(); alert('This is a preview. Form submission is disabled without a PHP server.');">
+                <div class="input-box">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="switch-form">
+                    Don't have an account? <a onclick="toggleForm()">Register</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Register Form -->
+        <div class="form-box register">
+            <h2>Create Account</h2>
+            <form onsubmit="event.preventDefault(); alert('This is a preview. Form submission is disabled without a PHP server.');">
+                <div class="input-box">
+                    <input type="text" name="username" placeholder="Username" required autocomplete="off">
+                </div>
+                <div class="input-box">
+                    <input type="email" name="email" placeholder="Email Address" required autocomplete="off">
+                </div>
+                <div class="input-box">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="switch-form">
+                    Already have an account? <a onclick="toggleForm()">Login here</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Script to toggle between forms visually -->
+    <script>
+        function toggleForm() {
+            const container = document.getElementById('auth-container');
+            container.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
